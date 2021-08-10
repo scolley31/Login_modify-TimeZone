@@ -5,10 +5,10 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.scolley.logging.R
-import com.scolley.logging.data.source.LoggingRepository
 import com.scolley.logging.data.LoginApi
 import com.scolley.logging.data.Result
-import com.scolley.logging.util.Util.getString
+import com.scolley.logging.data.User
+import com.scolley.logging.data.source.LoggingRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -16,58 +16,62 @@ import kotlinx.coroutines.launch
 
 class LoginViewModel(private val loggingRepository: LoggingRepository): ViewModel() {
 
-    private val _username = MutableLiveData<String>()
+    val username = MutableLiveData<String>()
 
-    val username: LiveData<String>
-        get() = _username
+    val password = MutableLiveData<String>()
 
-    private val _password = MutableLiveData<String>()
+    private val _user = MutableLiveData<User>()
 
-    val password: LiveData<String>
-        get() = _password
+    val user: LiveData<User>
+        get() = _user
 
     private val _error = MutableLiveData<String>()
 
     val error: LiveData<String>
         get() = _error
 
+    private val _navigateToTraffic = MutableLiveData<Boolean>()
+
+    val navigateToTraffic: LiveData<Boolean>
+        get() = _navigateToTraffic
+
     private var viewModelJob = Job()
 
     private val coroutineScope = CoroutineScope(viewModelJob + Dispatchers.Main)
 
-    init {
-        login("test2@qq.com","test1234qq")
-    }
+//    init {
+//        login("test2@qq.com","test1234qq")
+//    }
 
-    private fun login(username: String, password: String) {
+    fun login() {
 
         coroutineScope.launch {
 
-            when (val result = loggingRepository.login(username, password)) {
+            val result = loggingRepository.login(username.value!!, password.value!!)
+            Log.d("test","result = $result")
+
+            _user.value = when (result) {
                 is Result.Success -> {
-                    _error.value = null
-                    UserManager._user.value = result.data
-                    UserManager._isLoggedIn.value = true
-                    Log.d("test","user = ${UserManager.user}, login = ${UserManager.loginCheck}")
+                    result.data
                 }
                 is Result.Fail -> {
-                    _error.value = result.error
+                    null
                 }
                 is Result.Error -> {
-                    _error.value = result.exception.toString()
+                    null
                 }
                 else ->{
-                    _error.value = getString(R.string.you_know_nothing)
+                    null
                 }
             }
 
         }
-
     }
 
     override fun onCleared() {
         super.onCleared()
         viewModelJob.cancel()
     }
+
 
 }

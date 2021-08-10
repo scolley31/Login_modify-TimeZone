@@ -6,14 +6,9 @@ import com.scolley.logging.data.User
 
 object UserManager {
 
-    val _user = MutableLiveData<User>()
+    val user = MutableLiveData<User>()
 
-    val user: LiveData<User>
-        get() = _user
+    val isLoggedIn = MutableLiveData<Boolean>()
 
-    val _isLoggedIn = MutableLiveData<Boolean>()
-
-    val loginCheck: LiveData<Boolean>
-        get() = _isLoggedIn
 
 }

@@ -9,7 +9,6 @@ import android.view.View
 import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
-import com.scolley.logging.ext.getVmFactory
 import com.scolley.logging.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

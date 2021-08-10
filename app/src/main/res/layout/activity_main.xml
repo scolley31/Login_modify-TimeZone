@@ -7,8 +7,6 @@
         <variable
             name="viewModel"
             type="com.scolley.logging.MainViewModel" />
-        <import type="com.scolley.logging.data.CurrentFragmentType" />
-
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

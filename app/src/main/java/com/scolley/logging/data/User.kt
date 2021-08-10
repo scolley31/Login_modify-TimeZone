@@ -7,18 +7,18 @@ import kotlinx.android.parcel.Parcelize
 data class User(
 
     val error: String? = null,
-    val objectId: String,
-    val username: String,
-    val code: String,
+    val objectId: String? = null,
+    val username: String? = null,
+    val code: String? = null,
     val isVerifiedReportEmail: Boolean,
-    val reportEmail: String,
-    val createdAt: String,
-    val updatedAt: String,
+    val reportEmail: String? = null,
+    val createdAt: String? = null,
+    val updatedAt: String? = null,
     val timezone: Int,
     val parameter: Int,
     val number: Int,
-    val photo: String,
-    val sessionToken: String
+    val photo: String? = null,
+    val sessionToken: String? = null
 
 ): Parcelable {
 

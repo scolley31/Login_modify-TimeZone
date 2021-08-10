@@ -9,5 +9,14 @@
         android:id="@+id/loginFragment"
         android:name="com.scolley.logging.login.LoginFragment"
         android:label="LoginFragment"
-        tools:layout="@layout/fragment_login"/>
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_trafficFragment"
+            app:destination="@id/trafficFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/trafficFragment"
+        android:name="com.scolley.logging.Traffic.TrafficFragment"
+        android:label="TrafficFragment"
+        tools:layout="@layout/fragment_traffic"/>
 </navigation>

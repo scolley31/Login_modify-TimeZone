@@ -13,7 +13,7 @@ import retrofit2.http.Query
 
 private const val BASE_URL = "https://watch-master-staging.herokuapp.com/api/"
 
-private val moshi  = Moshi.Builder()
+private val moshi = Moshi.Builder()
     .add(KotlinJsonAdapterFactory())
     .build()
 
