@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/trafficFragment"
-        android:name="com.scolley.logging.Traffic.TrafficFragment"
+        android:name="com.scolley.logging.traffic.TrafficFragment"
         android:label="TrafficFragment"
         tools:layout="@layout/fragment_traffic"/>
 </navigation>

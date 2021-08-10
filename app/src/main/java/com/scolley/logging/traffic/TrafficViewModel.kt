@@ -1,4 +1,4 @@
-package com.scolley.logging.Traffic
+package com.scolley.logging.traffic
 
 import android.util.Log
 import androidx.lifecycle.LiveData
@@ -6,7 +6,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.scolley.logging.data.Information
 import com.scolley.logging.data.Result
-import com.scolley.logging.data.TrafficNews
 import com.scolley.logging.data.source.LoggingRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

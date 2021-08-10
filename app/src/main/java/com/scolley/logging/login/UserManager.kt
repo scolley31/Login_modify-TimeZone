@@ -6,7 +6,7 @@ import com.scolley.logging.data.User
 
 object UserManager {
 
-    val user = MutableLiveData<User>()
+    var user = MutableLiveData<User>()
 
     val isLoggedIn = MutableLiveData<Boolean>()
 

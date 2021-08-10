@@ -1,10 +1,9 @@
-package com.scolley.logging.Traffic
+package com.scolley.logging.traffic
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.scolley.logging.data.source.LoggingDataSource
 import com.scolley.logging.data.source.LoggingRepository
-import com.scolley.logging.login.LoginViewModel
 
 class TrafficViewModelFactory : ViewModelProvider.Factory {
 

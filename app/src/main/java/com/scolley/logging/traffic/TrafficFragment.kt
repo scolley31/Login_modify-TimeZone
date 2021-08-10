@@ -1,4 +1,4 @@
-package com.scolley.logging.Traffic
+package com.scolley.logging.traffic
 
 import android.os.Bundle
 import android.util.Log
@@ -8,14 +8,15 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.scolley.logging.databinding.FragmentLoginBinding
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.scolley.logging.databinding.FragmentTrafficBinding
-import com.scolley.logging.login.LoginViewModel
-import com.scolley.logging.login.LoginViewModelFactory
+
 
 class TrafficFragment: Fragment() {
 
     private lateinit var trafficViewModel: TrafficViewModel
+
+    lateinit var binding: FragmentTrafficBinding
 
     override fun onCreateView(
             inflater: LayoutInflater,
@@ -26,8 +27,13 @@ class TrafficFragment: Fragment() {
         trafficViewModel = ViewModelProvider(this, TrafficViewModelFactory())
                 .get(TrafficViewModel::class.java)
 
-        val binding =  FragmentTrafficBinding.inflate(inflater, container, false)
+        binding =  FragmentTrafficBinding.inflate(inflater, container, false)
+
         binding.lifecycleOwner = viewLifecycleOwner
+        binding.viewModel = trafficViewModel
+
+        binding.RecyclerInfo.layoutManager = LinearLayoutManager(context)
+        binding.RecyclerInfo.adapter = TrafficAdapter(trafficViewModel)
 
         trafficViewModel.info.observe(viewLifecycleOwner, Observer {
             it?.let {
