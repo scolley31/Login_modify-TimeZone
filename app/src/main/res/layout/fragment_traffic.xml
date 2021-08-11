@@ -44,6 +44,7 @@
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="10dp"
             android:gravity="center_horizontal|center_vertical"
+            android:onClick="@{() -> viewModel.navigateTimeZone()}"
             android:text="@string/time_zone"
             app:layout_constraintBottom_toBottomOf="@+id/toolbar"
             app:layout_constraintEnd_toEndOf="@+id/toolbar"

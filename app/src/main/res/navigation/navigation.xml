@@ -18,5 +18,14 @@
         android:id="@+id/trafficFragment"
         android:name="com.scolley.logging.traffic.TrafficFragment"
         android:label="TrafficFragment"
-        tools:layout="@layout/fragment_traffic"/>
+        tools:layout="@layout/fragment_traffic">
+        <action
+            android:id="@+id/action_trafficFragment_to_timeZoneFragment"
+            app:destination="@id/timeZoneFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/timeZoneFragment"
+        android:name="com.scolley.logging.timezone.TimeZoneFragment"
+        android:label="TimeZoneFragment"
+        tools:layout="@layout/fragment_timezone"/>
 </navigation>

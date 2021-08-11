@@ -19,6 +19,11 @@ class TrafficViewModel(private val loggingRepository: LoggingRepository): ViewMo
     val info: LiveData<List<Information>>
         get() = _info
 
+    private val _navigateToTimeZone = MutableLiveData<Boolean>()
+
+    val navigateToTimeZone: MutableLiveData<Boolean>
+        get() = _navigateToTimeZone
+
     private var viewModelJob = Job()
 
     private val coroutineScope = CoroutineScope(viewModelJob + Dispatchers.Main)
@@ -57,5 +62,13 @@ class TrafficViewModel(private val loggingRepository: LoggingRepository): ViewMo
         }
     }
 
+    fun navigateTimeZone() {
+        _navigateToTimeZone.value = true
+    }
+
+
+    fun deleteNavigateTimeZone() {
+        _navigateToTimeZone.value = null
+    }
 
 }

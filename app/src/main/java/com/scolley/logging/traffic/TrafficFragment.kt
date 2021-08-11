@@ -8,8 +8,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.scolley.logging.databinding.FragmentTrafficBinding
+import com.scolley.logging.login.LoginFragmentDirections
 
 
 class TrafficFragment: Fragment() {
@@ -40,6 +42,15 @@ class TrafficFragment: Fragment() {
                 Log.d("test","info = $it")
             }
         })
+
+        trafficViewModel.navigateToTimeZone.observe(viewLifecycleOwner, Observer {
+            it?.let {
+                Log.d("test","navigateToTimeZone = $it")
+                findNavController().navigate(TrafficFragmentDirections.actionTrafficFragmentToTimeZoneFragment())
+                trafficViewModel.deleteNavigateTimeZone()
+            }
+        })
+
 
         return binding.root
     }

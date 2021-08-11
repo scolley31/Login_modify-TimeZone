@@ -32,8 +32,8 @@ interface LoginApiApiService {
 
     @GET("login")
     suspend fun login(@Header("X-Parse-Application-Id")id: String,
-                          @Query("username") userName: String,
-                          @Query("password") password: String): User
+                      @Query("username") userName: String,
+                      @Query("password") password: String): User
 
 }
 
