@@ -47,6 +47,8 @@ class LoginFragment: Fragment() {
             it?.let {
                 Toast.makeText(this.requireContext(), "Login Success", Toast.LENGTH_SHORT).show()
                 Log.d("test","user = $it")
+                UserManager.user.value = loginViewModel.user.value
+                UserManager.isLoggedIn.value = true
                 findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToTrafficFragment())
                 loginViewModel.clearLiveData()
             }

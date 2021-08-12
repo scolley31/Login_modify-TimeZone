@@ -20,27 +20,60 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="250dp"
             android:hint="scolley31@gmail.com"
-            android:text="@{viewModel.userEmail.username}"
+            android:text='@{"Email: "+ viewModel.user.username}'
+            android:textColor="@color/black"
+            android:textSize="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <com.google.android.material.textfield.TextInputLayout
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            android:id="@+id/timezoneSpinner"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="70dp"-->
+<!--            android:layout_marginHorizontal="40dp"-->
+<!--            android:layout_marginTop="50dp"-->
+<!--            android:layout_marginBottom="300dp"-->
+<!--            android:hint="Timezone"-->
+<!--            app:boxStrokeColor="@color/gray"-->
+<!--            app:boxStrokeWidth="1dp"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.5"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/emailText">-->
+
+<!--            <com.google.android.material.textfield.MaterialAutoCompleteTextView-->
+<!--                android:id="@+id/autoCompleteTextView"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:inputType="none" />-->
+
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
+
+        <ImageView
+            android:id="@+id/backButton"
+            android:layout_width="51dp"
+            android:layout_height="37dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/outline_arrow_back_black_20" />
+
+        <Spinner
+            android:id="@+id/spinnerTimeZone"
+            android:background="@drawable/bg_textinput"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:layout_marginBottom="200dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="240dp"
+            android:autofillHints="@string/Time_zone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/emailText">
-
-            <com.google.android.material.textfield.MaterialAutoCompleteTextView
-                android:id="@+id/autoCompleteTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="AutoCompleteTextView" />
-        </com.google.android.material.textfield.TextInputLayout>
+            app:layout_constraintTop_toBottomOf="@+id/emailText" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

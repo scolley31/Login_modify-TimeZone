@@ -1,10 +1,7 @@
 package com.scolley.logging.data.source
 
-import com.scolley.logging.LoggingApplication
-import com.scolley.logging.R
 import com.scolley.logging.data.*
 import com.scolley.logging.login.UserManager
-import com.scolley.logging.util.Util.getString
 import java.lang.Exception
 
 class LoggingDataSource {

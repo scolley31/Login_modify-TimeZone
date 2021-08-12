@@ -115,9 +115,6 @@ class LoginViewModel(private val loggingRepository: LoggingRepository): ViewMode
                 }
             }
 
-            UserManager.user = _user
-            UserManager.isLoggedIn.value = true
-
         }
     }
 
