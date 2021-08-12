@@ -8,7 +8,7 @@ object UserManager {
 
     var user = MutableLiveData<User>()
 
-    val isLoggedIn = MutableLiveData<Boolean>()
+    var isLoggedIn = MutableLiveData<Boolean>()
 
 
 }

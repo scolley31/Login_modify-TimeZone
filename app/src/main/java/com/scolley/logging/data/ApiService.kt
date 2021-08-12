@@ -7,9 +7,7 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
-import retrofit2.http.GET
-import retrofit2.http.Header
-import retrofit2.http.Query
+import retrofit2.http.*
 
 private const val BASE_URL = "https://watch-master-staging.herokuapp.com/api/"
 
@@ -34,6 +32,13 @@ interface LoginApiApiService {
     suspend fun login(@Header("X-Parse-Application-Id")id: String,
                       @Query("username") userName: String,
                       @Query("password") password: String): User
+
+    @PUT("users/{userId}")
+    suspend fun updateUser(@Header("X-Parse-Application-Id")id: String,
+                           @Header("X-Parse-Session-Token") token: String,
+                           @Header("Content-Type") type: String,
+                           @Body timezone: TimeZone,
+                           @Path("userId") objectId: String): TimezoneResponse
 
 }
 
