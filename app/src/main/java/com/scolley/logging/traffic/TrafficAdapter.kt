@@ -20,7 +20,6 @@ class TrafficAdapter(val viewModel: TrafficViewModel) :
         }
     }
 
-
     companion object DiffCallback : DiffUtil.ItemCallback<Information>() {
         override fun areItemsTheSame(oldItem: Information, newItem: Information): Boolean {
             return oldItem.chtmessage == newItem.chtmessage

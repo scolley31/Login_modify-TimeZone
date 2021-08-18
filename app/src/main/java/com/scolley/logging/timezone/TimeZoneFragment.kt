@@ -85,23 +85,6 @@ class TimeZoneFragment: Fragment() {
             }
         }
 
-//        val dropDownAdapter = ArrayAdapter<String>(
-//                requireContext(),
-//                android.R.layout.simple_dropdown_item_1line,
-//                timeZoneViewModel.timeZoneList.value!!.toTypedArray()
-//        )
-//
-//        binding.autoCompleteTextView.apply {
-//            setAdapter(dropDownAdapter)
-//            setText(
-//                    dropDownAdapter.getItem(timeZoneViewModel.getGMTTimeToPosition(timeZoneViewModel.user.value!!.timezone)),
-//                    false
-//            )
-//            setOnItemClickListener { _, _, position, _ ->
-//                timeZoneViewModel.updateTimezone(position)
-//            }
-//        }
-//
         binding.backButton.setOnClickListener {
             findNavController().navigate(TimeZoneFragmentDirections.actionTimeZoneFragmentToTrafficFragment())
         }

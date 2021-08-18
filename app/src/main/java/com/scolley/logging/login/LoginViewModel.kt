@@ -56,10 +56,6 @@ class LoginViewModel(private val loggingRepository: LoggingRepository): ViewMode
 
     private val coroutineScope = CoroutineScope(viewModelJob + Dispatchers.Main)
 
-//    init {
-//        login("test2@qq.com","test1234qq")
-//    }
-
     private fun checkEmail() {
         username.value?.let { mail ->
             _mailFormat.value = mail.isNotEmpty() && Patterns.EMAIL_ADDRESS.matcher(mail).matches()

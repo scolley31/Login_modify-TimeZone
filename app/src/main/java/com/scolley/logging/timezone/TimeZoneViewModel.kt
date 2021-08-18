@@ -44,32 +44,14 @@ class TimeZoneViewModel(private val loggingRepository: LoggingRepository) : View
 
     init {
         _user.value = UserManager.user.value
-//        showTimeZoneArray()
     }
-
-//    private fun showTimeZoneArray() {
-//
-//        val list = mutableListOf<String>()
-//
-//        for (i in -11..12) {
-//            if (i >= 0) {
-//                list.add("GMT +$i")
-//            } else {
-//                list.add("GMT $i")
-//            }
-//        }
-//        timeZoneList.value = list
-//    }
 
     private fun getPositionToGMTTime(index: Int): Int{
         return index - 11
     }
 
-//    fun getGMTTimeToPosition(time: Int): Int{
-//        return time + 12
-//    }
-
     fun updateTimezone(position: Int){
+
         if (getPositionToGMTTime(position) != user.value!!.timezone) {
 
             coroutineScope.launch {
